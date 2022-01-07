@@ -34,7 +34,7 @@ fn init_logger() {
 fn main() {
     init_logger();
     let matches = App::new("tectonic-cli")
-        .version("0.0.1")
+        .version(env!("VERGEN_GIT_SEMVER_LIGHTWEIGHT"))
         .author("Ricky Han <tectonic@rickyhan.com>")
         .about("command line client for tectonic financial datastore")
         .arg(

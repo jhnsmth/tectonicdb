@@ -9,6 +9,7 @@ edition = "2018"
 version = "0.5.2"
 exclude = ["cli/", "test/test-data/bt_btceth.dtf"]
 readme = "README.md"
+build = "build.rs"
 
 [[bin]]
 name = "tdb-server"
@@ -61,3 +62,7 @@ path = "tests/integration_test.rs"
 
 default = ["influx"]
 influx = []
+
+[build-dependencies]
+anyhow = "1"
+vergen = { version = "5" }

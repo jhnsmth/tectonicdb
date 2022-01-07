@@ -16,7 +16,7 @@ use clap::{Arg, App};
 
 fn main() {
     let matches = App::new("dtftools")
-        .version("1.0.0")
+        .version(env!("VERGEN_GIT_SEMVER_LIGHTWEIGHT"))
         .author("Ricky Han <tectonic@rickyhan.com>")
         .about("tools for dtf files")
 

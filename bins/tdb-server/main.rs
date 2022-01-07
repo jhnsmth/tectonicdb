@@ -129,7 +129,7 @@ fn prepare_logger(verbosity: u8, log_file: &str) {
 fn get_matches<'a>() -> ArgMatches<'a> {
 
     let app = App::new("tectonic-server")
-        .version("1.0.0")
+        .version(env!("VERGEN_GIT_SEMVER_LIGHTWEIGHT"))
         .author("Ricky Han <tectonic@rickyhan.com>")
         .about("tectonic financial datastore")
         .arg(
