@@ -65,4 +65,4 @@ influx = []
 
 [build-dependencies]
 anyhow = "1"
-vergen = { version = "5" }
+vergen = { version = "6" }
