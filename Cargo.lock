@@ -494,6 +494,7 @@ dependencies = [
  "once_cell",
  "regex",
  "terminal_size",
+ "unicode-width",
  "winapi",
 ]
 
@@ -1225,12 +1226,13 @@ dependencies = [
 
 [[package]]
 name = "indicatif"
-version = "0.17.0-rc.1"
+version = "0.17.0-rc.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c112b1e714737c51fa137aaf6ae2cdf6960d01895e096a6feb1e0afd192c790d"
+checksum = "04a9b1bacd1a40927c953c5c4485089d8ecc9642cb03e7734eac8a74e8c5b508"
 dependencies = [
  "console",
  "number_prefix",
+ "unicode-width",
 ]
 
 [[package]]
