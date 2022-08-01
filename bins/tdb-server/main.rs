@@ -126,7 +126,7 @@ fn prepare_logger(verbosity: u8, log_file: &str) {
 
 /// Gets configuration values from CLI arguments, falling back to environment variables
 /// if they don't exist and to default values if neither exist.
-fn get_matches<'a>() -> ArgMatches<'a> {
+fn get_matches() -> ArgMatches {
 
     let app = App::new("tectonic-server")
         .version(env!("VERGEN_GIT_SEMVER_LIGHTWEIGHT"))
@@ -134,7 +134,7 @@ fn get_matches<'a>() -> ArgMatches<'a> {
         .about("tectonic financial datastore")
         .arg(
             Arg::with_name("host")
-                .short("h")
+                .short('h')
                 .long("host")
                 .value_name("HOST")
                 .help("Sets the host to connect to (default 0.0.0.0)")
@@ -142,7 +142,7 @@ fn get_matches<'a>() -> ArgMatches<'a> {
         )
         .arg(
             Arg::with_name("port")
-                .short("p")
+                .short('p')
                 .long("port")
                 .value_name("PORT")
                 .help("Sets the port to connect to (default 9001)")
@@ -150,29 +150,29 @@ fn get_matches<'a>() -> ArgMatches<'a> {
         )
         .arg(
             Arg::with_name("dtf_folder")
-                .short("f")
+                .short('f')
                 .long("dtf_folder")
                 .value_name("FOLDER")
                 .help("Sets the folder to serve dtf files")
                 .takes_value(true),
         )
-        .arg(Arg::with_name("v").short("v").multiple(true).help(
+        .arg(Arg::with_name("v").short('v').multiple(true).help(
             "Sets the level of verbosity",
         ))
-        .arg(Arg::with_name("autoflush").short("a").help(
+        .arg(Arg::with_name("autoflush").short('a').help(
             "Sets autoflush (default is false)",
         ))
 
         .arg(
             Arg::with_name("flush_interval")
-                .short("i")
+                .short('i')
                 .long("flush_interval")
                 .value_name("INTERVAL")
                 .help("Sets autoflush interval (default every 1000 inserts)"),
         )
         .arg(
             Arg::with_name("granularity")
-                .short("g")
+                .short('g')
                 .long("granularity")
                 .value_name("GRANULARITY")
                 .help(
@@ -181,7 +181,7 @@ fn get_matches<'a>() -> ArgMatches<'a> {
         )
         .arg(
             Arg::with_name("log_file")
-                .short("l")
+                .short('l')
                 .long("log_file")
                 .value_name("LOG_FILE")
                 .help("Sets the log file to write to"),

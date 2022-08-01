@@ -39,7 +39,7 @@ fn main() {
         .about("command line client for tectonic financial datastore")
         .arg(
             Arg::with_name("host")
-                .short("h")
+                .short('h')
                 .long("host")
                 .value_name("HOST")
                 .help("Sets the host to connect to (default 0.0.0.0)")
@@ -47,7 +47,7 @@ fn main() {
         )
         .arg(
             Arg::with_name("port")
-                .short("p")
+                .short('p')
                 .long("port")
                 .value_name("PORT")
                 .help("Sets the port to connect to (default 9001)")
@@ -55,7 +55,7 @@ fn main() {
         )
         .arg(
             Arg::with_name("s")
-                .short("s")
+                .short('s')
                 .long("subscription")
                 .value_name("DBNAME")
                 .help("subscribe to the datastore")
@@ -63,7 +63,7 @@ fn main() {
         )
         .arg(
             Arg::with_name("b")
-                .short("b")
+                .short('b')
                 .value_name("ITERATION")
                 .multiple(false)
                 .help("Benchmark network latency")

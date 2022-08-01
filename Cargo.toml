@@ -5,7 +5,7 @@ description = "tectonicdb server"
 keywords = ["finance", "datastore", "database", "financial", "orderbook"]
 repository = "https://github.com/0b01/tectonicdb"
 license = "MIT"
-edition = "2018"
+edition = "2021"
 version = "0.5.2"
 exclude = ["cli/", "test/test-data/bt_btceth.dtf"]
 readme = "README.md"
@@ -32,21 +32,21 @@ tdb_core = { path = "crates/tdb-core", version = "0.5.0" }
 tdb_cli = { path = "crates/tdb-cli", version = "0.5.0" }
 log = "0.4.14"
 fern = "0.6.0"
-chrono = "0.4.19"
+chrono = "0.4.20-rc.1"
 openssl-probe = "0.1.4"
 indicatif = "0.17.0-rc.1"
 
 itertools = "0.10.1"
 
-clap = "2.33.3"
+clap = "3.2.16"
 serde = "1.0.133"
 serde_derive = "1.0.133"
 serde_json = "1.0.74"
 byteorder = "1.4.3"
-indoc = "1.0.3"
+indoc = "1.0.7"
 linefeed = "0.6.0"
 memmap = "0.7.0"
-zip = "0.5.13"
+zip = "0.6.2"
 
 
 [workspace]
@@ -65,4 +65,4 @@ influx = []
 
 [build-dependencies]
 anyhow = "1"
-vergen = { version = "5" }
+vergen = { version = "7" }

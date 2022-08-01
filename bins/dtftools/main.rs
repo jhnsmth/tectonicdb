@@ -19,7 +19,7 @@ fn main() {
         .version(env!("VERGEN_GIT_SEMVER_LIGHTWEIGHT"))
         .author("Ricky Han <tectonic@rickyhan.com>")
         .about("tools for dtf files")
-
+        .subcommand_required(true)
         .subcommand(clap::SubCommand::with_name("cat")
             .about(indoc!("
                 Print dtf files to plaintext
@@ -46,7 +46,7 @@ fn main() {
             )
             .arg(
                 Arg::with_name("output")
-                .short("o")
+                .short('o')
                 .long("output")
                 .value_name("OUTPUT")
                 .help("output file")
@@ -89,7 +89,7 @@ fn main() {
             )
             .arg(
                 Arg::with_name("meta")
-                    .short("m")
+                    .short('m')
                     .long("show_metadata")
                     .help("read only the metadata"),
             )
@@ -105,11 +105,11 @@ fn main() {
 
 
             .arg(Arg::with_name("timebars")
-                .short("t")
+                .short('t')
                 .long("timebars")
                 .help("output rebinned time-candles"))
             .arg(Arg::with_name("aligned")
-                .short("a")
+                .short('a')
                 .long("aligned")
                 .requires("timebars")
                 .help(indoc!("
@@ -119,7 +119,7 @@ fn main() {
                     ^ discard up to this point
                 ")))
             .arg(Arg::with_name("minutes")
-                .short("g")
+                .short('g')
                 .long("minutes")
                 .required(false)
                 .requires("timebars")
@@ -136,7 +136,7 @@ fn main() {
                 "))
             .arg(
                 Arg::with_name("threshold")
-                    .short("t")
+                    .short('t')
                     .long("threshold")
                     .help("gap threshold in seconds")
                     .default_value("60")
@@ -160,7 +160,7 @@ fn main() {
                 "))
             .arg(
                 Arg::with_name("compressed")
-                    .short("c")
+                    .short('c')
                     .long("compressed")
                     .help("use Deflated compression")
             )
@@ -217,7 +217,7 @@ fn main() {
                     .takes_value(true))
             .arg(
                 Arg::with_name("BATCH")
-                    .short("b")
+                    .short('b')
                     .long("batch_size")
                     .value_name("BATCH_SIZE")
                     .help("Specify the number of batches to read")
@@ -237,7 +237,7 @@ fn main() {
                     .takes_value(true))
             .arg(
                 Arg::with_name("output")
-                .short("o")
+                .short('o')
                 .long("output")
                 .value_name("OUTPUT")
                 .help("output file")
@@ -246,19 +246,13 @@ fn main() {
             ))
     .get_matches();
 
-    if let Some(matches) = matches.subcommand_matches("cat") {
-        dtfcat::run(matches);
-    } else if let Some(matches) = matches.subcommand_matches("check") {
-        dtfcheck::run(matches);
-    } else if let Some(matches) = matches.subcommand_matches("numpy") {
-        dtfnumpy::run(matches);
-    } else if let Some(matches) = matches.subcommand_matches("split") {
-        dtfsplit::run(matches);
-    } else if let Some(matches) = matches.subcommand_matches("concat") {
-        dtfconcat::run(matches);
-    } else if let Some(matches) = matches.subcommand_matches("repair") {
-        dtfrepair::run(matches);
-    } else {
-        println!("{}", matches.usage());
+    match matches.subcommand() {
+       Some(("cat", sub_matches)) => dtfcat::run(sub_matches),
+       Some(("check", sub_matches)) => dtfcheck::run(sub_matches),
+       Some(("numpy", sub_matches)) => dtfnumpy::run(sub_matches),
+       Some(("split", sub_matches)) => dtfsplit::run(sub_matches),
+       Some(("concat", sub_matches)) => dtfconcat::run(sub_matches),
+       Some(("repair", sub_matches)) => dtfrepair::run(sub_matches),
+        _ => unreachable!(),
     }
 }
