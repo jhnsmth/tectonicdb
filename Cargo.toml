@@ -36,7 +36,7 @@ chrono = "0.4.20-rc.1"
 openssl-probe = "0.1.4"
 indicatif = "0.17.0-rc.1"
 
-itertools = "0.10.1"
+itertools = "0.10.5"
 
 clap = "3.2.16"
 serde = "1.0.133"
