@@ -2676,7 +2676,7 @@ dependencies = [
  "surf",
  "tdb_core",
  "tempdir",
- "time 0.3.12",
+ "time 0.3.15",
  "uuid",
 ]
 
@@ -2816,12 +2816,11 @@ dependencies = [
 
 [[package]]
 name = "time"
-version = "0.3.12"
+version = "0.3.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "74b7cc93fc23ba97fde84f7eea56c55d1ba183f495c6715defdfc7b9cb8c870f"
+checksum = "d634a985c4d4238ec39cacaed2e7ae552fbd3c476b552c1deac3021b7d7eaf0c"
 dependencies = [
  "itoa 1.0.3",
- "js-sys",
  "libc",
  "num_threads",
  "time-macros 0.2.4",
@@ -3089,7 +3088,7 @@ dependencies = [
  "rustversion",
  "sysinfo",
  "thiserror",
- "time 0.3.12",
+ "time 0.3.15",
 ]
 
 [[package]]
@@ -3325,7 +3324,7 @@ dependencies = [
  "hmac 0.12.1",
  "pbkdf2",
  "sha1 0.10.1",
- "time 0.3.12",
+ "time 0.3.15",
  "zstd",
 ]
 
