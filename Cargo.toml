@@ -32,7 +32,7 @@ tdb_core = { path = "crates/tdb-core" }
 tdb_cli = { path = "crates/tdb-cli" }
 log = "0.4.14"
 fern = "0.6.0"
-chrono = "0.4.20-rc.1"
+chrono = "0.4.23"
 openssl-probe = "0.1.4"
 indicatif = "0.17.0-rc.1"
 
