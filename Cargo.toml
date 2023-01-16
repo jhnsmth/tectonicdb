@@ -34,7 +34,7 @@ log = "0.4.14"
 fern = "0.6.0"
 chrono = "0.4.20-rc.1"
 openssl-probe = "0.1.4"
-indicatif = "0.17.0-rc.1"
+indicatif = "0.17.3"
 
 itertools = "0.10.1"
 
